@@ -3,8 +3,14 @@ class HomePage {
         cy.visit('https://www.matchingengine.com/');
     }
 
-    navigateToRepertoireManagementModule() {
-        cy.get('#burger').click();
+    navigateToRepertoireManagementModule(useSmallScreenSize) {
+        if (useSmallScreenSize) {
+            cy.viewport('ipad-2');
+            cy.get('#burger').click();
+        } else {
+            cy.viewport('macbook-15')
+            cy.contains('Modules').focus()
+        }
         cy.contains('Repertoire Management Module').click();
     }
 }
