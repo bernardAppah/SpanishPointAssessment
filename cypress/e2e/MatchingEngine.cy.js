@@ -1,5 +1,6 @@
 import { homePage } from '../support/pages/HomePage';
 import {repertoireManagementModulePage } from '../support/pages/RepertoireManagementModulePage'
+
 describe('Repertoire Management Module Navigation and Product Support Verification', () => {
   beforeEach(() => {
     homePage.visit();
