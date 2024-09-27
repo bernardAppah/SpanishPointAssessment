@@ -45,6 +45,14 @@ An automation solution that employs Cypress to perform the following actions:
 ---
 
 ## Solution decisions
+I have implemented the automated tests using the **Page Object Model** design pattern, which enhances code reusability and maintainability.
+
+Additionally, I conducted the tests using two different viewports to ensure comprehensive coverage for responsiveness.
+
+To increase robustness, I made an effort to minimize the use of IDs and classes as selectors, given their propensity to change. However, there were specific cases where using them was unavoidable.
+
+For the assertion on the list of supported products under the heading *“There are several types of Product Supported:”*, I opted to verify that the list contains more than zero items, even though there are currently four items. This approach was intentional to future-proof the test against any changes in the number of supported products.
+![AssertionOnList](img_4.png)
  
 
 
