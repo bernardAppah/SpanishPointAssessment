@@ -24,7 +24,7 @@ An automation solution that employs Cypress to perform the following actions:
   ```
   node -v
    ```
-+ Install the necessary packages using npm:
++ Install the necessary packages using npm(Be aware that this may take some time):
    ```
    npm install
    ```
@@ -40,7 +40,7 @@ An automation solution that employs Cypress to perform the following actions:
    ```
   npx cypress run --browser chrome --spec "cypress/e2e/MatchingEngine.cy.js"
   ```
-  ![Sample4](./img.png)
+  ![Sample4](img.png)
 
 ---
 
@@ -51,7 +51,8 @@ Additionally, I conducted the tests using two different viewports to ensure comp
 
 To increase robustness, I made an effort to minimize the use of IDs and classes as selectors, given their propensity to change. However, there were specific cases where using them was unavoidable.
 
-For the assertion on the list of supported products under the heading *“There are several types of Product Supported:”*, I opted to verify that the list contains more than zero items, even though there are currently four items. This approach was intentional to future-proof the test against any changes in the number of supported products.
+For the assertion on the list of supported products under the heading *“There are several types of Product Supported:”*, I first verify that the list contains exactly four products, then ensure their names match what’s displayed on the screen. 
+If the list does not contain four products, I only check that it has more than zero items, as we expect at least one product to always be supported. This approach was deliberately designed to future-proof the test against potential changes in the number of supported products.
 ![AssertionOnList](img_4.png)
  
 
