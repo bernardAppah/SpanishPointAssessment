@@ -53,7 +53,6 @@ To increase robustness, I made an effort to minimize the use of IDs and classes 
 
 For the assertion on the list of supported products under the heading *“There are several types of Product Supported:”*, I first verify that the list contains exactly four products, then ensure their names match what’s displayed on the screen. 
 If the list does not contain four products, I only check that it has more than zero items, as we expect at least one product to always be supported. This approach was deliberately designed to future-proof the test against potential changes in the number of supported products.
-![AssertionOnList](img_4.png)
  
 
 

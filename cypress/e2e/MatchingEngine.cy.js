@@ -6,19 +6,22 @@ describe('Repertoire Management Module Navigation and Product Support Verificati
     homePage.visit();
   });
 
-  // Helper function to handle different screen sizes based on the boolean flag
-  function navigateAndTestRepertoireManagementModule(useSmallScreenSize) {
+  /**
+   * Verifies that on the Repertoire Management Module page, the list of products are as expected.
+   * @param useSmallScreenSize Indicates if to use a small screen size or not
+   */
+  function verifySupportedProducts(useSmallScreenSize) {
     homePage.navigateToRepertoireManagementModule(useSmallScreenSize);
-    repertoireManagementModulePage.navigateToAdditionalFeatures();
+    repertoireManagementModulePage.scrollToAdditionalFeatures();
     repertoireManagementModulePage.clickProductsSupported();
     repertoireManagementModulePage.assertSupportedProductsList();
   }
 
-  it('should navigate to the repertoire management module and verify list of supported products on an ipad-2 ', () => {
-    navigateAndTestRepertoireManagementModule(true);
+  it('should navigate to the repertoire management module and verify list of supported products on an ipad-2 (small screen)', () => {
+    verifySupportedProducts(true);
   })
 
-  it('should navigate to the repertoire management module and verify list of supported products on a macbook-15', () => {
-    navigateAndTestRepertoireManagementModule(false);
+  it('should navigate to the repertoire management module and verify list of supported products on a macbook-15 (large screen)', () => {
+    verifySupportedProducts(false);
   })
 })
